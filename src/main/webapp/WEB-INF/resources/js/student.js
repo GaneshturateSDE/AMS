@@ -29,15 +29,16 @@
             data.forEach((s,index)=>{
     			table.innerHTML+=`<tr>
                   <td>${index+1}</td>
-                  <td>${s.firstname}+" "+${s.lastname} </td>
+                  <td>${s.firstname}${s.lastname} </td>
                   <td>${s.email}</td>
                   <td>${s.contact}</td>
                   <td>${s.type}</td>
                   <td>
-                    <button class="btn btn-warning btn-sm" id="${s.id}">Update</button>
-                    <button class="btn btn-danger btn-sm" id="${s.id}" onClick="deleteStudent(this.id)">Delete</button>
+                    <button class="btn btn-warning btn-sm" id="${s.id}"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn btn-danger btn-sm" id="${s.id}" onClick="deleteStudent(this.id)"><i class="fa-solid fa-trash-can"></i></button>
                   </td></tr>`;
     		});
+			location.reload();
             // Reload or update the table to reflect the deletion
         })
         .catch(error => console.error('Error:', error));

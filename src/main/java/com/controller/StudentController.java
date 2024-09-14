@@ -22,6 +22,7 @@ import com.google.gson.Gson;
 import com.model.DepartmentModel;
 import com.model.PassYearModel;
 import com.model.UserModel;
+import com.oracle.wls.shaded.org.apache.bcel.generic.NEW;
 import com.services.DeptService;
 import com.services.PassYearService;
 import com.services.StudentService;
@@ -45,21 +46,26 @@ public class StudentController {
 	
 	@PostMapping
 	public String addUser(@ModelAttribute("UserModel")UserModel um, Model model) {
-		        um.setType("student");
+		        
 		          
 		     model.addAttribute("UserModel",um);
-		         
+		     if(us.isStudent(um) == null) {  
              if(us.addStudent(um)) {
-            	 model.addAttribute("msg", "Student addes");
-            	
+            	 model.addAttribute("msg", "Student added");
+            	 return "student";
              }else {
             	 model.addAttribute("msg", "Student not added");
-            	
+            	 return "student";
              }
-            List<UserModel> ulist=us.getStudents();
-            model.addAttribute("slist", ulist);
+		     }else{
+		    	 model.addAttribute("msg", "Student Already Present");
+            	 return "student";
+		     }
+			/*
+			 * List<UserModel> ulist=us.getStudents(); model.addAttribute("slist", ulist);
+			 */
              
-		return "user";
+		
 	}
 	
 	@PostMapping("/verify")
@@ -143,6 +149,7 @@ public class StudentController {
 		m.addAttribute("dlist", list);
 		List<PassYearModel> ylist=pService.getPassYears();
 		m.addAttribute("y", ylist);
+		m.addAttribute("UserModel",new UserModel());
 		return "student";
 	}
 

@@ -27,7 +27,10 @@
     
      <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/bootstrap.css'/>" />
      <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/dashboard.css'/>" />
-  
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 </head>
 <body>
   
@@ -84,8 +87,8 @@
               <td><%=c++ %></td>
               <td>${p.getName()}</td>
               <td>
-                <a href="place/${p.getId()}" class="btn btn-warning btn-sm" >Update</a>
-                <button class="btn btn-danger btn-sm" id="${p.getId()}" onClick="deletePlace(this.id)">Delete</button>
+                <a href="place/${p.getId()}" class="btn btn-warning btn-sm" ><i class="fa-solid fa-pen"></i></a>
+                <button class="btn btn-danger btn-sm" id="${p.getId()}" onClick="deletePlace(this.id)"><i class="fa-solid fa-trash-can"></i></button>
                 
               </td>
             </tr>

@@ -45,7 +45,7 @@ let getStudent=() => {
 	    						<td>${s.email}</td>
 	    					     
 	    						<td><a href="#" id="${s.id}" class="attendance-btn ${attendanceClass}"
-	    							onclick="markAttendance(this.id)">${attendanceText}</a></td>
+	    							>${attendanceText}</a></td>
 	    					</tr>`;
                       }
 				})

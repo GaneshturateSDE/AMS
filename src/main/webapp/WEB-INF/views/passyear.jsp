@@ -16,7 +16,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <!-- DataTables JS -->
-
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 </head>
 <body>
 
@@ -58,8 +61,8 @@
                 <td><%= c++ %></td>
                 <td>${year.getYear()}</td>
                 <td>
-                  <a href="passyear/update/${year.getId()}" class="btn btn-warning btn-sm">Update</a>
-                  <button class="btn btn-danger btn-sm" id="${year.getId()}" onClick="deletePassYear(this.id)">Delete</button>
+                  <a href="passyear/update/${year.getId()}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen"></i></a>
+                  <button class="btn btn-danger btn-sm" id="${year.getId()}" onClick="deletePassYear(this.id)"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
             </tr>
             </c:forEach>

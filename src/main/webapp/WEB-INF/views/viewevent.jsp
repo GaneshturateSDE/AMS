@@ -66,8 +66,8 @@
 						<td>${event.getPm().getName() }</td>
 						<td>${event.getDescription() }</td>
 						<td>
-							<a href="event/${event.getId()}" class="btn btn-warning btn-sm">Update</a>
-                            <button class="btn btn-danger btn-sm" id="${event.getId()}" onClick="deleteEvent(this.id)">Delete</button>
+							<a href="event/${event.getId()}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen"></i></a>
+                            <button class="btn btn-danger btn-sm" id="${event.getId()}" onClick="deleteEvent(this.id)"><i class="fa-solid fa-trash-can"></i></button>
                         </td>
 					</tr>
 				</c:forEach>

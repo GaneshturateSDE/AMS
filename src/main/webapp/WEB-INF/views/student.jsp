@@ -32,43 +32,44 @@
 
 			<div id="add-student-form" class="mx-auto row">
 				<!-- Add User Form -->
-				<h3>Add Student</h3>
+				
 				<form:form action="student" method="POST" id="student-form"
 					cssClass="col-lg-6 col-md-8 col-10 mx-auto" modelAttribute="UserModel">
+					<h3>Add Student</h3>
 					<div class="d-flex col-12">
-						<div cssClass="mb-2 col-6">
+						<div class="mb-2 col-6">
 							<form:label path="firstname" cssClass="form-label">First Name</form:label>
 							<form:input type="text" path="firstname" id="firstname"
 								cssClass="form-control" required="true"
 								placeholder="Enter user name" />
 						</div>
-						<div cssClass="mb-2 col-6">
+						<div class="mb-2 col-6">
 							<form:label path="lastname" cssClass="form-label">Last Name</form:label>
 							<form:input type="text" path="lastname" id="lastname"
 								cssClass="form-control" required="true"
 								placeholder="Enter user name" />
 						</div>
 					</div>
-					<div cssClass="mb-2">
-						<form:label path="userEmail" cssClass="form-label">Email</form:label>
+					<div class="mb-2">
+						<form:label path="email" cssClass="form-label">Email</form:label>
 						<form:input type="email" path="email" id="userEmail"
 							cssClass="form-control" required="true" placeholder="Enter email" />
 					</div>
-					<div cssClass="mb-2">
+					<div class="mb-2">
 						<form:label path="password" cssClass="form-label">Password</form:label>
 						<form:input type="password" path="password" id="password"
 							cssClass="form-control" required="true"
 							placeholder="Enter Password" />
 					</div>
-					<div cssClass="mb-2">
+					<div class="mb-2">
 						<form:label path="contact" cssClass="form-label">Contact</form:label>
 						<form:input type="text" path="contact" id="contact"
 							cssClass="form-control" required="true"
 							placeholder="Enter contact" />
 					</div>
-					<form:hidden path="type" value="Student" />
-					<div cssClass="mb-2" id="dept">
-						<form:label path="department" cssClass="form-label">Department</form:label>
+					<form:hidden path="type" value="student" />
+					<div class="mb-2" id="dept">
+						<form:label path="department.id" cssClass="form-label">Department</form:label>
 						<form:select path="department.id" id="department"
 							cssClass="form-select">
 							<c:forEach var="item" items="${dlist}">
@@ -76,16 +77,18 @@
 							</c:forEach>
 						</form:select>
 					</div>
-					<div cssClass="mb-2">
-						<form:label path="year" cssClass="form-label">Select Passout Year</form:label>
+					<div class="mb-2">
+						<form:label path="pass.id" cssClass="form-label">Select Passout Year</form:label>
 						<form:select path="pass.id" id="year" cssClass="form-select">
 							<c:forEach var="item" items="${y}">
 								<form:option value="${item.id}">${item.year}</form:option>
 							</c:forEach>
-						</form:select>
+												</form:select>
 					</div>
-					<button type="submit" cssClass="btn btn-primary">Add User</button>
+					<button type="submit" class="btn btn-primary">Add User</button>
 				</form:form>
+			</div>
+			</div>
 			</div>
 			<!-- User Table -->
 

@@ -95,10 +95,10 @@ search.addEventListener("keyup",(event)=>{
     document.getElementById('departmentForm').addEventListener('submit', function(event) {
             let valid = true;
       const departmentNameRegex = /^[A-Za-z\s-]+$/;
-        alert("hello")
+        
             // Validate Department Name
             let departmentInput = document.getElementById("department").value;
-			alert(departmentInput)
+			
             const departmentError = document.getElementById('departmentError');
             if (!departmentNameRegex.test(departmentInput)) {
                 departmentError.textContent = 'Invalid department name. Only letters, spaces, and hyphens are allowed.';

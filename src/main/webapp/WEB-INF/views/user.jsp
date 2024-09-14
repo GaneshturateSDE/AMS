@@ -61,8 +61,8 @@
                         <td>${s.getContact() }</td>
                         <td>${s.getType()}</td>
                         <td>
-                            <a href="student/update/${s.getId()}" class="btn btn-warning btn-sm">Update</a>
-                            <button class="btn btn-danger btn-sm" id="${s.getId() }" onClick="deleteStudent(this.id)">Delete</button>
+                            <a href="student/update/${s.getId()}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen"></i></a>
+                            <button class="btn btn-danger btn-sm" id="${s.getId() }" onClick="deleteStudent(this.id)"><i class="fa-solid fa-trash-can"></i></button>
                         </td>
                     </tr>
                 </c:forEach>
